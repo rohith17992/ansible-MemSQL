@@ -1,0 +1,16 @@
+[server]
+auditlogsdir          = auditlogs
+bind_address          = 0.0.0.0
+datadir               = data
+pid_file              = memsqld.pid
+plancachedir          = plancache
+port                  = 3306
+tracelogsdir          = tracelogs
+basedir               = .
+core_file             = true
+lc_messages_dir       = ./share
+lock_wait_timeout     = 60
+snapshot_trigger_size = 256m
+socket                = memsql.sock
+tmpdir                = .
+transaction_buffer    = 64m

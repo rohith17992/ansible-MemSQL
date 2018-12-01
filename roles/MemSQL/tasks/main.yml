@@ -1,0 +1,18 @@
+- name: Confgiure Repo for memSQL
+  yum_repository:
+     name: MemSQL
+     description: MemSQL repo
+     baseurl: https://release.memsql.com/production/rpm/x86_64
+     gpgcheck: yes
+     enabled: yes
+     gpgkey: https://release.memsql.com/release-aug2018.gpg
+
+- name: ensure a list of packages installed
+  yum:
+    name: "{{ packages }}"
+  vars:
+    packages:
+    - memsql-toolbox
+    - memsql-client
+- name: Deploy memsql on install
+  shell: ./deploy.sh

@@ -1,0 +1,5 @@
+- name: Copy files to remote
+  copy: src=memsql.cnf dest=/temp/memsql.cnf mode=640 
+
+- name: update configuration
+  shell: memsql-admin update-config -y --config /temp/memsql.cnf
