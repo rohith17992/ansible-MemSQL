@@ -16,3 +16,5 @@
     - memsql-client
 - name: Deploy memsql on install
   shell: ./deploy.sh
+- name: Restart all nodes
+  shell: sudo memsqlctl start-node -y -a
