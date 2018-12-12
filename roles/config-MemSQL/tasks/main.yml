@@ -3,3 +3,6 @@
 
 - name: update configuration
   shell: memsql-admin update-config -y --config /temp/memsql.cnf
+  
+- name: restart nodes
+  shell: memsqlctl restart-node -y -a
